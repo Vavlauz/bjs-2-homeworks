@@ -43,33 +43,15 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   let months = Math.trunc(
     +(diffDate / (1000 * 60 * 60 * 24 * 30.5)).toFixed(0)
   );
-  if (percent < 0 || percent == "test") {
-    return (
-      'Параметр "Процентная ставка" содержит неправильное значение' +
-      " " +
-      '"' +
-      percent +
-      '"'
-    );
+  if (isNaN(percent) || percent < 0) {
+    return `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
   } else {
     monthRate = percent / (100 * 12);
   }
-  if (contribution < 0 || contribution == "test") {
-    return (
-      'Параметр "Начальный взнос" содержит неправильное значение' +
-      " " +
-      '"' +
-      contribution +
-      '"'
-    );
-  } else if (amount < 0 || amount == "test") {
-    return (
-      'Параметр "Общая стоимость" содержит неправильное значение' +
-      " " +
-      '"' +
-      amount +
-      '"'
-    );
+  if (isNaN(contribution) || contribution < 0) {
+    return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`;
+  } else if (isNaN(amount) || amount < 0) {
+    return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
   } else {
     sum = amount - contribution;
   }
