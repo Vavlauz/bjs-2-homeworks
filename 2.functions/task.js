@@ -16,7 +16,7 @@ function getArrayParams(arr) {
     if (ar <= arr[0]) {
       min = ar;
     }
-    if (ar >= arr[0]) {
+    if (ar >= max) {
       max = ar;
     }
   }
@@ -29,7 +29,7 @@ function getArrayParams(arr) {
 
   return { min: min, max: max, avg: avg };
 }
-// console.log(getArrayParams([-99, 99, 10, 105]));
+// console.log(getArrayParams([-99, 99, 10]));
 
 // Задание 2
 
@@ -70,25 +70,24 @@ function makeWork(arrOfArr, func) {
 function worker2(arr) {
   let max = null;
   let min = null;
-  let diff = null;
 
   for (let ar of arr) {
     if (ar <= arr[0]) {
       min = ar;
     }
-    if (ar >= arr[0]) {
+    if (ar >= min && ar >= arr[0]) {
       max = ar;
     }
   }
-  return Math.abs((diff = max - min));
+  return Math.abs(max - min);
 }
 
-// console.log(
-//   makeWork(
-//     [
-//       [-10, -20, -40],
-//       [10, 20, 30],
-//     ],
-//     worker2
-//   )
-// );
+console.log(
+  makeWork(
+    [
+      [-10, -20, -40],
+      [10, 20, 30],
+    ],
+    worker2
+  )
+);
