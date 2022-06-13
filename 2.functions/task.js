@@ -82,12 +82,12 @@ function worker2(arr) {
   return Math.abs(max - min);
 }
 
-console.log(
-  makeWork(
-    [
-      [-10, -20, -40],
-      [10, 20, 30],
-    ],
-    worker2
-  )
-);
+// console.log(
+//   makeWork(
+//     [
+//       [-10, -20, -40],
+//       [10, 20, 30],
+//     ],
+//     worker2
+//   )
+// );
