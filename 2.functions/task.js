@@ -33,7 +33,7 @@ function getArrayParams(arr) {
   return { min: min, max: max, avg: avg };
 }
 // console.log(getArrayParams([6, 1, 5]));
-// console.log(getArrayParams([-99, 99, 10]));
+console.log(getArrayParams([-99, 99, 10]));
 
 // Задание 2
 
