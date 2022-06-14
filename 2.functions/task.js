@@ -10,10 +10,13 @@ for (var i = minimum; i < maximum; i++) {
 // console.log(array);
 
 function getArrayParams(arr) {
-  (min = null), (max = null), (sum = 0), (avg = null);
+  let min = arr[0],
+    max = null,
+    sum = 0,
+    avg = null;
 
   for (let ar of arr) {
-    if (ar <= arr[0]) {
+    if (ar <= min) {
       min = ar;
     }
     if (ar >= max) {
@@ -29,6 +32,7 @@ function getArrayParams(arr) {
 
   return { min: min, max: max, avg: avg };
 }
+// console.log(getArrayParams([6, 1, 5]));
 // console.log(getArrayParams([-99, 99, 10]));
 
 // Задание 2
