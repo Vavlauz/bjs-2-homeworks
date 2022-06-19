@@ -23,13 +23,18 @@ Student.prototype.addMark = function (mark) {
 // student1.setSubject("Algebra");
 // console.log(student1);
 
-Student.prototype.addMarks = function (mark1, mark2, mark3, ...marks) {
-  this.marks = [mark1, mark2, mark3, ...marks];
+Student.prototype.addMarks = function (...args) {
+  if (this.marks === undefined) {
+    this.marks = args;
+  } else {
+    this.marks.push(...args);
+  }
 };
 
 // student1.addMark(3);
 // student1.addMark(2);
 // student1.addMark(2);
+// student1.addMarks(3, 2, 2);
 // console.log(student1);
 
 Student.prototype.getAverage = function () {
