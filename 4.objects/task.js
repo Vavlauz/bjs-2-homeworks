@@ -49,11 +49,12 @@ Student.prototype.getAverage = function () {
 
 Student.prototype.exclude = function (reason) {
   let result = 0;
-  for (let key of this.marks) {
-    result = result + key;
-  }
+  let middle = this.getAverage();
+  // for (let key of this.marks) {
+  //   result = result + key;
+  // }
 
-  if (result / this.marks.length < 3) {
+  if (middle < 3) {
     delete this.subject;
     delete this.marks;
     this.excluded = reason;
