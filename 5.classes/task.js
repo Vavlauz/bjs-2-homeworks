@@ -104,7 +104,7 @@ class Library {
   findBookBy(type, value) {
     let search = this.book.filter((el) => el[type] == value);
     if (search != false) {
-      return search;
+      return el;
     } else {
       return null;
     }
