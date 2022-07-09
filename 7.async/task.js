@@ -62,9 +62,9 @@ class AlarmClock {
 
 function testCase() {
   let alarmClock = new AlarmClock();
-  alarmClock.addClock("19:59", () => console.log("Подъем, труба зовет!"), 1);
+  alarmClock.addClock("20:20", () => console.log("Подъем, труба зовет!"), 1);
   alarmClock.addClock(
-    "20:00",
+    "20:21",
     () => {
       console.log("Вставай!!! Нас ждут великие дела!");
       alarmClock.removeClock(2);
@@ -72,7 +72,7 @@ function testCase() {
     2
   );
   alarmClock.addClock(
-    "20:01",
+    "20:22",
     () => {
       console.log("Работа сама себя не сделает!!!");
       alarmClock.stop();
